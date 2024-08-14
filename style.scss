@@ -1,0 +1,52 @@
+@import '@layout/scss/main.scss';
+@import '@layout/scss/menu.scss';
+
+
+
+// scrollbars
+@import '@layout/scss/_scrollbars.scss';
+
+/* modules styles */
+@import '@layout/portfolio/portfolio.module.scss';
+
+
+@font-face {
+    font-family: 'Lora';
+    // src:  url('./src/assets/fonts/Lora-VariableFont_wght.ttf') format('truetype');
+    src:  url('./src/assets/fonts/SourceSansPro-Regular.ttf') format('truetype');
+}
+
+html {
+    font-family: 'Lora', serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background: rgb(241 241 241);
+}
+
+
+// $small: 300px;
+// $medium: 900px;
+
+// .smth {
+//   //some CSS
+//   @media screen and (max-width: $small) {
+//     //do Smth
+//   }
+//   @media screen and (min-width: $medium) {
+//     //do Smth
+//   }
+// }
+
+
+

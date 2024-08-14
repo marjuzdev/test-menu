@@ -1,0 +1,387 @@
+#contact {
+	-webkit-tap-highlight-color: transparent;
+
+  .container-notification-message {
+    position: absolute;
+    inset: 0 0 0 0;
+    z-index: 4;
+    background: #dbe1e6;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+
+    .wrapper-notification-message {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .container-load-spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        &.transition-spinner {
+          top: 10vh;
+          transition: top 500ms ease-in-out;
+        }
+
+        .container-load-spinner-svg {
+          width: 7vh;
+          height: 7vh;
+          position: relative;
+
+          .spinner-group {
+            transform-origin: center;
+            animation: none;
+
+            .dash {
+              stroke-width: 2;
+              stroke-dashoffset: 0;
+              stroke-linecap: round;
+              stroke-dasharray: 150;
+              animation: none;
+            }
+
+            .circle-invisible {
+              stroke-linecap: round;
+              stroke-dasharray: 150;
+              stroke-dashoffset: 90;
+              transition: none;
+            }
+          }
+
+          .checkmark,
+          .crossmark,
+          .circle-invisible,
+          .dash {
+            fill: none;
+          }
+
+          &.success {
+
+            .checkmark {
+              transform-origin: 50% 50%;
+              stroke-dasharray: 48;
+              stroke-dashoffset: 48;
+              animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.5s forwards
+            }
+
+            .checkmark-group .checkmark,
+            .spinner-group .circle-invisible {
+              stroke: #34a853;
+              stroke-width: 2;
+            }
+
+            .spinner-group {
+              .dash {
+                stroke-width: 0;
+              }
+
+              .circle-invisible {
+                stroke-dashoffset: 0;
+              }
+            }
+          }
+
+          &.error {
+
+            .cross-mark-group {
+              #line1 {
+                animation-delay: 500ms;
+              }
+
+              #line2 {
+                animation-delay: 1000ms;
+              }
+            }
+
+            .crossmark {
+              stroke-dasharray: 100;
+              stroke-dashoffset: 100;
+              animation: stroke 0.5s forwards;
+            }
+
+            .cross-mark-group .crossmark,
+            .spinner-group .circle-invisible {
+              stroke: #D06079;
+              stroke-width: 2;
+            }
+
+            .spinner-group {
+              .dash {
+                stroke-width: 0;
+              }
+
+              .circle-invisible {
+                stroke-dashoffset: 0;
+              }
+            }
+          }
+        }
+      }
+
+      .container-notification-text {
+        position: relative;
+        top: 15vh;
+        width: 50%;
+        height: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+
+        &.show {
+          height: auto;
+          opacity: 1;
+          visibility: visible;
+          transition-delay: 1.2s;
+        }
+
+        &#message-success {
+
+          .container-more-text {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 1em;
+  
+            .more-text {
+              color: #3c3c3c;
+              font-weight: 500;
+            }
+          }
+        }
+  
+        &#message-error {
+          .container-more-text {
+            margin-bottom: 1em;
+          }
+  
+          .container-list {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            width: 80%;
+            margin-bottom: 1em;
+  
+            .list-contact-media {
+              display: flex;
+              gap: 1em;
+              flex-direction: column;
+  
+              .item-contact-media {
+                list-style: circle;
+              }
+            }
+          }
+        }
+
+        .notification-header {
+          text-align: center;
+          margin-bottom: 1em;
+
+          &-title {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 500;
+          }
+        }
+
+        .notification-body {
+          color: gray;
+
+          .container-message-text {
+            width: 100%;
+            margin-bottom: 0.5em;
+            text-align: center;
+            margin-bottom: 1em;
+          }
+
+          .container-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1em;
+          }
+
+          .main-text {
+            color: #4C7F9F;
+          }
+
+          .main-action {
+            background: #4C7F9F;
+            color: #efefef;
+
+          }
+
+          .secondary-action {
+            background: #efefef;
+            color: #4C7F9F;
+          }
+        }
+      }
+
+    }
+
+    &.activate {
+
+      opacity: 1;
+      visibility: visible;
+
+      .wrapper-notification-message .container-load-spinner-svg {
+
+        .spinner-group {
+          animation: rotate 2s linear infinite !important;
+
+          .dash {
+            stroke: #4C7F9F;
+            animation: dash 1.5s ease-in-out infinite !important;
+          }
+
+          .circle-invisible {
+            transition: stroke-dashoffset 0.5s, stroke 0.5s !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin mobile-notification-message {
+  #contact {
+    .container-notification-message {
+      .wrapper-notification-message {
+
+        .container-notification-text {
+          width: 100%;
+          &#message-error {
+            .notification-body {
+              .container-message-text {
+                font-size: 0.9em;
+              }
+              .container-list {
+                .list-contact-media {
+                  .item-contact-media {
+                    font-size: 0.9em;
+                  }
+                }
+              }
+    
+              .container-more-text {
+                font-size: 0.9em;
+              }
+    
+              .container-actions {
+                flex-direction: column;
+              }
+            }
+          }
+    
+          &#message-success {
+            .notification-body {
+              .container-message-text {
+                font-size: 0.9em;
+              }
+    
+              .container-more-text {
+                .more-text {
+                  font-size: 0.8em;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin medium-notification-message {
+  #contact {
+    .container-notification-message {
+
+      .wrapper-notification-message {
+        .container-load-spinner {
+          &.transition-spinner {
+            top: 8vh;
+          }
+
+          .container-load-spinner-svg {
+            width: 10vh;
+            height: 10vh;
+          }
+        }
+
+        .container-notification-text {
+          &#message-error {
+            .notification-header {
+               margin-bottom: 1em;
+            }
+    
+            .notification-body {
+              .container-message-text {
+                font-size: 0.9em;
+              }
+    
+              .container-list {
+                width: 100%;
+                text-align: start;
+                justify-content: center;
+                .list-contact-media {
+                  gap: 0.5em;
+                  .item-contact-media {
+                    font-size: 0.9em;
+                  }
+                }
+              }
+    
+              .container-more-text {
+                font-size: 0.9em;
+              }
+
+              .container-actions {
+                gap: 1em;
+              }
+            }
+          }
+    
+          &#message-success {
+            
+            .notification-body {
+              .container-message-text {
+                font-size: 0.9em;
+              }
+    
+              .container-more-text {
+                .more-text {
+                  font-size: 0.8em;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+// Styles for small screens (mobile)
+@media only screen and (max-width: 767px) {
+  @include mobile-notification-message;
+}
+
+// Styles for tablets
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  // @include mobile-notification-message;
+}
+
+// Styles for medium-sized screens
+@media only screen and (min-width: 1025px) and (max-width: 1366px) {
+  @include medium-notification-message;
+}
+
+// Styles for large screens (min-width: 1367px) 
+@media only screen and (min-width: 1367px) {}

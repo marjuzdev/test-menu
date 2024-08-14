@@ -1,0 +1,94 @@
+@keyframes floating {
+    0% {
+      transform: translatey(0px);
+    }
+  
+    50% {
+      transform: translatey(-25px);
+    }
+  
+    100% {
+      transform: translatey(0px);
+    }
+  }
+
+
+  @keyframes morph {
+
+    0%,
+    100% {
+      border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+    }
+  
+    33% {
+      border-radius:
+        72% 28% 48% 48% / 28% 28% 72% 72%;
+    }
+  
+    66% {
+      border-radius:
+        100% 56% 56% 100% / 100% 100% 56% 56%;
+    }
+  }
+
+
+  @keyframes marquee-left {
+    0% {
+      transform: translateX(0)
+    }
+  
+    to {
+      transform: translateX(calc(-100%));
+    }
+  }
+
+  /* ====== start - animations ============== */
+
+@keyframes stroke {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 1, 150;
+      stroke-dashoffset: 0;
+    }
+  
+    50% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -35;
+    }
+  
+    100% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -124;
+    }
+  }
+/* ====== start - loader ============== */
+
+@keyframes loader-animation {
+  0% {
+      transform: translate3d(-100%, 0, 0);
+  }
+  48%, 52% {
+      transform: translateZ(0);
+  }
+  100% {
+      transform: translate3d(100%, 0, 0);
+  }
+}
+/* ====== end - loader ============== */
+  
+/* ====== end - animations ============== */
+
+
+
+  

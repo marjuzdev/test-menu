@@ -1,0 +1,17 @@
+/* SIDE BAR STYLES */
+@import '@layout/scss/menu/full-menu.scss';
+@import '@layout/scss/menu/responsive-menu.scss';
+@import '@layout/scss/menu/btn-hamburger.scss';
+
+/* properties used for design responsive (javascript) */
+
+.active {
+    color: rgb(11, 97, 211) !important;
+    font-weight: 600 !important;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

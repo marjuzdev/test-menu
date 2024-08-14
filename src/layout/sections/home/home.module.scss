@@ -1,0 +1,223 @@
+#home {
+  position: relative;
+  height: 90vh;
+
+  .wrapper-content-body {
+    width: 80%;
+    .job-profile {
+      opacity: 0;
+      font-size: 5em;
+      letter-spacing: -0.2px;
+      line-height: 90px;
+      font-weight: 300;
+      line-height: 1.2;
+
+      .main-text {
+        color: rgb(27, 90, 119);
+      }
+    }
+
+    .paragraph-description {
+      width: 80%;
+      margin-top: 2rem;
+      color: #3c3c3c;
+      letter-spacing: 0.5px;
+      overflow-x: hidden;
+    }
+  }
+
+  .facts {
+
+    margin: 2em 2em 2em 5em;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    gap: 5em;
+    position: relative;
+
+    .number {
+      font-size: 72px;
+      color: rgb(27, 90, 119);
+      line-height: 90px;
+      font-weight: 300;
+    }
+
+    .description {
+      font-size: 14px;
+      line-height: 24px;
+      text-transform: uppercase;
+    }
+  }
+
+  .rotating-btn {
+    position: absolute;
+    right: 0;
+    bottom: 2rem;
+
+    .btn-link {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 120px;
+      height: 120px;
+
+      // color: #e9e9f1; 
+      svg {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        text {
+          font-size: 12px !important;
+          letter-spacing: 0.05rem;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+@mixin mobile-section-home {
+
+  #home {
+    position: relative;
+    height: auto;
+
+    .wrapper-content-body {
+      width: 100%;  
+  
+      .job-profile {
+        font-size: 8vw;
+        .main-text {
+          width: 100%;
+        }
+      }
+    
+      .paragraph-description {
+        width: 100%;
+      }
+    }
+  
+    .facts {
+      flex-direction: column;
+      width: 100%;
+      margin: 0 0 5em 0 ;
+      gap: 1em;
+
+      .left, .right {
+        flex: 1 1 0%;
+        text-align: center;
+
+        .number {
+          font-size: 8vw;
+          line-height: 10vh;
+        }
+  
+        .description {
+          font-size: 0.8em;
+        }
+      }
+    }
+
+    .rotating-btn {
+      position: relative;
+      text-align: center;
+      margin-top: 5vh;
+      bottom: auto;
+      right: auto;
+
+      .btn-link {
+        width: 90px;
+        height: 90px;
+      }
+    }
+  }
+
+}
+
+@mixin medium-section-home {
+
+  #home {
+
+    position: relative;
+    height: auto;
+    .wrapper-content-body {
+      width: 90%; 
+      .job-profile {
+        font-size: 4.5vw;
+      }
+      .paragraph-description {
+        margin-top: 1em;
+      }
+    }
+    .facts {
+      width: 90%;
+      margin: 0em 0em 7em 5em ;
+      gap: 5vw;
+
+      .left, .right {
+        text-align: center;
+        .number {
+          font-size: 3.5vw;
+        }
+  
+        .description {
+          font-size: 0.8em;
+        }
+      }
+    }
+
+    .rotating-btn {
+      right: 6vw;
+      bottom: 0;
+      .btn-link {
+        width: 15vh;
+        height: 15vh;
+      }
+    }
+  }
+}
+
+/* ===== START responsive design content main ===== */
+
+// Styles for small screens (mobile) (max-width: 767px)
+// Styles for tablets (min-width: 768px) and (max-width: 1024px)
+// @media only screen and (max-width: 1024px) {
+//     #about {
+//       background: rgb(126, 75, 75);
+//     }
+// }
+  
+/* ===== END - responsive design content main  =====*/
+
+
+
+/* ===== START full design content main ===== */
+
+
+// Styles for small screens (mobile)
+@media only screen and (max-width: 767px) {
+  @include mobile-section-home;
+}
+
+// Styles for tablets
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  @include mobile-section-home;
+}
+
+// Styles for medium-sized screens
+@media only screen and (min-width: 1025px) and (max-width: 1366px) {
+  @include medium-section-home;
+}
+
+// Styles for large screens (min-width: 1367px) 
+@media only screen and (min-width: 1367px) {
+  #home {
+    // background: rgb(158, 158, 158);
+    // height: 90vh;
+  }
+}
+
+/* ===== END full design content main ===== */
