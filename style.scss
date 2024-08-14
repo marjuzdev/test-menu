@@ -1,6 +1,11 @@
 @import '@layout/styles/main.scss';
-@import '@layout/MenuBar/MenuBar.scss';
 
+/* fonts */
+@import '@layout/styles/fonts/PlayfairDisplay.scss';
+@import '@layout/styles/fonts/Ranade.scss';
+@import '@layout/styles/fonts/Lora.scss';
+@import '@layout/styles/fonts/SourceSansPro.scss';
+@import '@layout/styles/fonts/Inter.scss';
 
 html {
     font-family: 'Lora', serif;

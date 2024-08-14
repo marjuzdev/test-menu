@@ -1,11 +1,12 @@
 @import '@layout/MenuBar/styles/full-menu.scss';
 @import '@layout/MenuBar/styles/responsive-menu.scss';
 @import '@layout/MenuBar/styles/button-hamburger.scss';
-/* properties used for design responsive (javascript) */
+
 .active {
     color: rgb(11, 97, 211) !important;
     font-weight: 600 !important;
 }
+
 
 .center {
     display: flex;

@@ -1,0 +1,9 @@
+@mixin full-sidebar {
+
+    .menu-sticky {
+        opacity: 0;
+        position: absolute;
+        visibility: hidden;
+        display: none;
+    }
+}

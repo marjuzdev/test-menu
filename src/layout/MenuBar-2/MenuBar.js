@@ -1,7 +1,7 @@
-// scripts logic
-import ButtonHamburger from '@layout/MenuBar/scripts/ButtonHamburger';
-import MenuSticky from '@layout/MenuBar/scripts/MenuSticky';
-import MenuHighlight from '@layout/MenuBar/scripts/MenuHighlight';
+// scripts logicMenuBar-2/
+import ButtonHamburger from '@layout/MenuBar-2/scripts/ButtonHamburger';
+import MenuSticky from '@layout/MenuBar-2/scripts/MenuSticky';
+import MenuHighlight from '@layout/MenuBar-2/scripts/MenuHighlight';
 
 let sections = []
 let navbarHeight = 0;
@@ -115,10 +115,11 @@ window.addEventListener('load', () => {
 });
 
 const run = () => {
+
     ButtonHamburger.run();
-    MenuSticky.run();
-    MenuHighlight.run();
-    smoothScrollContent();
+    // MenuSticky.run();
+    // MenuHighlight.run();
+    // smoothScrollContent();
 }
 
 export default {
