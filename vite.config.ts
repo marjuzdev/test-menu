@@ -19,13 +19,7 @@ export default defineConfig({
       '@layout': path.resolve(__dirname, 'src/layout')
     },
   },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: "@import 'variables.scss';",
-      },
-    },
-  },
+  css: {},
   build: {
     target: "esnext",
     sourcemap: true,

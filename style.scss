@@ -1,20 +1,6 @@
-@import '@layout/scss/main.scss';
-@import '@layout/scss/menu.scss';
+@import '@layout/styles/main.scss';
+@import '@layout/MenuBar/MenuBar.scss';
 
-
-
-// scrollbars
-@import '@layout/scss/_scrollbars.scss';
-
-/* modules styles */
-@import '@layout/portfolio/portfolio.module.scss';
-
-
-@font-face {
-    font-family: 'Lora';
-    // src:  url('./src/assets/fonts/Lora-VariableFont_wght.ttf') format('truetype');
-    src:  url('./src/assets/fonts/SourceSansPro-Regular.ttf') format('truetype');
-}
 
 html {
     font-family: 'Lora', serif;
@@ -33,20 +19,6 @@ html {
 body {
     background: rgb(241 241 241);
 }
-
-
-// $small: 300px;
-// $medium: 900px;
-
-// .smth {
-//   //some CSS
-//   @media screen and (max-width: $small) {
-//     //do Smth
-//   }
-//   @media screen and (min-width: $medium) {
-//     //do Smth
-//   }
-// }
 
 
 

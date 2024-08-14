@@ -1,10 +1,14 @@
+// scripts logic
+import ButtonHamburger from '@layout/MenuBar/scripts/ButtonHamburger';
+import MenuSticky from '@layout/MenuBar/scripts/MenuSticky';
+import MenuHighlight from '@layout/MenuBar/scripts/MenuHighlight';
+// templates
+import MenuBarTemplate from '@layout/MenuBar/MenuBar.html?raw';
 
-import BtnHamburger from '@layout/menu/nav-side-bar/btn-hamburger';
-import MenuSticky from '@layout/menu/nav-side-bar/menu-sticky';
-import HighlightLink from '@layout/menu/menu-highlight/highlight-link';
+const body = document.querySelector('body');
+body.insertAdjacentHTML('afterbegin', MenuBarTemplate );
 
-
-let sections = [];
+let sections = []
 let navbarHeight = 0;
 let lastWidthScreen = 0;
 
@@ -109,22 +113,19 @@ const detectDirectionScroll = (
     return currentOption >= previusOption;
 };
 
-const main = () => {
-
-    // window.addEventListener('load', () => {
-
-    BtnHamburger.run();
-    MenuSticky.run();
-    HighlightLink.run();
-    smoothScrollContent();
-    // const div = document.createElement('div');
-    // div.innerHTML = PortfolioTemplate;
-    // document.body.appendChild(div);
-    // });
-}
-main();
 
 
 window.addEventListener('load', () => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
 });
+
+const run = () => {
+    ButtonHamburger.run();
+    MenuSticky.run();
+    MenuHighlight.run();
+    smoothScrollContent();
+}
+
+export default {
+    run
+}
