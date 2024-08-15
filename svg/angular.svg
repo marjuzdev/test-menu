@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+    <symbol id="angular">
+        <path id="angular-part1" d="M16 2L2.966 6.648l1.988 17.234L16 30l11.046-6.118l1.988-17.234z" />
+        <path id="angular-part2" d="M16 2v3.108v-.014V30l11.046-6.118l1.988-17.234z"/>
+        <path id="angular-part3"
+            d="m16 5.094l-8.148 18.27h3.038l1.638-4.088h6.916l1.638 4.088h3.038zm2.38 11.662h-4.76L16 11.03Z" />
+    </symbol>
+</svg>

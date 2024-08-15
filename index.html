@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>marjuz</title>
+  <script type="module" crossorigin src="/js/index-3412850e.js"></script>
+  <link rel="stylesheet" href="/css/index-baf82047.css">
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+
+  <!-- <div id="splashscreen">
+        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+          <path d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+        </svg>
+          <div class="inner">
+                <div class="text-box"> 
+                    <h3>marjuz</h3>
+                </div>
+                <div class="line-frame">
+                    <div class="line"></div>
+                </div>
+          </div>
+    </div> -->
+
+
+  <div id="imageBackground" class="image-background-parallax" data-speed="0.4"></div>
+
+  <!-- FULL MENU - SIDE BAR -->
+  <aside class="sidebar">
+    <div class="wrapper-avatar">
+      <div class="container-avatar">
+        <div class="img-avatar"></div>
+      </div>
+      <div class="wrapper-trademark">
+        <div class="container-trademark">
+          <span class="text">marjuz</span>
+        </div>
+      </div>
+    </div>
+    <nav class="menu">
+      <ul class="navigation">
+        <li class="option"><a name="home">Inicio</a></li>
+        <li class="option"><a name="about">Sobre mí</a></li>
+        <li class="option"><a name="skills">Habilidades</a></li>
+        <li class="option"><a name="portfolio">Portafolio</a></li>
+        <li class="option"><a name="resume">Formación</a></li>
+        <li class="option"><a name="contact">Contacto </a></li>
+      </ul>
+    </nav>
+    <footer class="footer-sidebar">
+      </div>
+      <ul class="social-media-list">
+        <li class="github social-media-item">
+          <a class="contact-icon" href="https://github.com/marjuzdev" target="_blank">
+            <svg height="24" width="24" viewBox="0 0 432 416">
+              <use xlink:href="svg/github.svg#github" />
+            </svg>
+            <div class="overlay"></div>
+          </a>
+        </li>
+        <li class="linkedin social-media-item">
+          <a class="contact-icon" href="https://www.linkedin.com/in/marioajuez" target="_blank">
+            <svg width="24" height="24" viewBox="0 0 20 20">
+              <use xlink:href="svg/linkedin.svg#linkedin" />
+            </svg>
+            <div class="overlay"></div>
+          </a>
+        </li>
+
+        <li class="gmail social-media-item">
+          <a class="contact-icon" href="https://mail.google.com/mail/?view=cm&fs=1&to=marjuzdev@gmail.com"
+            target="_blank">
+            <svg width="24" height="24" viewBox="0 0 256 193">
+              <use xlink:href="svg/gmail.svg#gmail-part1" class="gmail-part1" />
+              <use xlink:href="svg/gmail.svg#gmail-part2" class="gmail-part2" />
+              <use xlink:href="svg/gmail.svg#gmail-part3" class="gmail-part3" />
+              <use xlink:href="svg/gmail.svg#gmail-part4" class="gmail-part4" />
+              <use xlink:href="svg/gmail.svg#gmail-part5" class="gmail-part5" />
+            </svg>
+            <div class="overlay"></div>
+          </a>
+        </li>
+      </ul>
+      <div class="separator"></div>
+      <div class="copyright">
+        <p> &copy; marjuz 2024. Todos los derechos reservados</p>
+      </div>
+    </footer>
+  </aside>
+
+  <!-- END FULL MENU - SIDE BAR  -->
+
+  <!-- MENU HAMBURGER ONLY RESPONSIVE-->
+  <div class="menu-sticky" style="top: 15vh;">
+    <div class="btn-hamburger">
+      <div class="line-1"></div>
+      <div class="line-2"></div>
+      <div class="line-3"></div>
+    </div>
+  </div>
+  <!-- END HAMBURGER ONLY RESPONSIVE-->
+
+  <main class="root"></main>
+
+  
+</body>
+
+</html>
+
+<!-- tareas sueltas -->
+
+<!-- 
+
+7 ajustar menu en lo siguente:
+
+  -  ajustar para que los iconos de contacto sean responsivos
+  -  revisar donde poner el Copyright (se podria en el menu o en el footer) -- se ha progesado algo
+  -- ver si se puede agregar el boton de contacto
+  - menu de resultar mirar logicar y estilos ( observer intersector)
+
+8. Revisar una api para envio de correos electronicos (ya no sirve la que habia integrado)
+9 analizar cargue de la pagina con (light house)
+10 revisar aniamciones:
+  - que se ejecuten de forma agradable (no me gusta como se ve, con el scroll no se demora, se ve un delay)
+  - cuando haya un cambio de altura en la pantalla( timeline collapser). 
+  
+
+  resueltas 
+
+  1 Ajustar estilos para las pantllas faltantes (secciones).
+  mi pantalla pc 
+  1366 * 768
+
+  2 Revisar con que libraria tomo los iconos, ya que estoy usando dos. Mapear si es necesario:
+  Se agrego por css la libreria importando solo una hoja de iconos de phosphor.
+
+  3 popup-mensaje de copio enlace proyecto y comaprtir agregar funcionalidad
+
+  4 agregar un loader cuando carge el proyecto
+    NOTA!! -> hay problema, cuando carga las letras del loader.
+           -> Ajustar cuando cargue la pagina
+
+  5 crear correo electronico para que me contacten.
+  es -> marjuzdev@gmail.com
+
+  6 Agregar seccion o footer par que me contacten ( linkedin | correo nombre | github)
+
+  se agrego (correo, numero de celular, pais)
+-->
