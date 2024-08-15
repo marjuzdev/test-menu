@@ -117,7 +117,7 @@ window.addEventListener('load', () => {
 const run = () => {
 
     ButtonHamburger.run();
-    // MenuSticky.run();
+    MenuSticky.run();
     // MenuHighlight.run();
     // smoothScrollContent();
 }
