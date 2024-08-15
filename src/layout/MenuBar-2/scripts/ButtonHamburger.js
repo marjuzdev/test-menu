@@ -1,7 +1,7 @@
 
 const run = () =>{
  
-    const menuHamburger = document.querySelector(".btn-hamburger");
+    const menuHamburger = document.querySelector(".button-hamburger");
     const nav = document.querySelector("nav");
     
     menuHamburger.addEventListener("click", () => {

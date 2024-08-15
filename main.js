@@ -14,3 +14,12 @@ import MenuBarTemplate from '@layout/MenuBar-2/MenuBar.html?raw';
 import '@layout/MenuBar-2/MenuBar.scss';
 body.insertAdjacentHTML('afterbegin', MenuBarTemplate);
 MenuBar.run();
+
+
+
+
+
+
+
+
+
