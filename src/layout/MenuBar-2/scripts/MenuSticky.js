@@ -24,6 +24,7 @@ const run = () => {
                 // remove property top when is full screen
                 navbar.style.removeProperty('top');
                 buttonSticky.style.removeProperty('top');
+                menuList.style.removeProperty('top');
             }
     });
 }
@@ -52,7 +53,7 @@ const makeMenuSticky = ({ headerInViewUp, headerSticky, contentSticky } )  => {
     offset += currentPositionScroll;
 
     const headerInViewUpHeight = headerInViewUp.clientHeight;
-    const contentStickyHeight = contentSticky.clientHeight;
+    const headerStickyHeight = headerSticky.clientHeight;
 
     // 1. the navbar is not visible
     if (offset > headerInViewUpHeight) {
@@ -67,10 +68,11 @@ const makeMenuSticky = ({ headerInViewUp, headerSticky, contentSticky } )  => {
     // elements DOM to modify
     headerInViewUp.style.top = `${-(offset)}px`;
     headerSticky.style.top = `${ (headerInViewUpHeight - offset) - 1 }px`;
-    contentSticky.style.top = `${ (headerInViewUpHeight + contentStickyHeight) - 1 }px`;
+    contentSticky.style.top = `${ (headerInViewUpHeight + headerStickyHeight) - 1 }px`;
 }
 
 export default {
     run
 };
+
 
