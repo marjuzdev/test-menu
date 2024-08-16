@@ -1,12 +1,12 @@
 
 const run = () =>{
  
-    const menuHamburger = document.querySelector(".button-hamburger");
-    const nav = document.querySelector("nav");
+    const buttonHamburger = document.querySelector(".button-hamburger");
+    const menuList = document.querySelector(".menu");
     
     menuHamburger.addEventListener("click", () => {
-        menuHamburger.classList.toggle("open");
-        nav.classList.toggle("show-nav");
+        buttonHamburger.classList.toggle("open");
+        menuList.classList.toggle("show-nav");
     });
 };
 
