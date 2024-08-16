@@ -1,4 +1,4 @@
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))i(n);new MutationObserver(n=>{for(const r of n)if(r.type==="childList")for(const a of r.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&i(a)}).observe(document,{childList:!0,subtree:!0});function s(n){const r={};return n.integrity&&(r.integrity=n.integrity),n.referrerPolicy&&(r.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?r.credentials="include":n.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function i(n){if(n.ep)return;n.ep=!0;const r=s(n);fetch(n.href,r)}})();const c=()=>{const t=document.querySelector(".button-hamburger"),e=document.querySelector("nav");t.addEventListener("click",()=>{t.classList.toggle("open"),e.classList.toggle("show-nav")})},d={run:c},u=()=>{const t=document.querySelector(".sidebar"),e=document.querySelector(".button-sticky"),s=document.querySelector(".menu"),i={headerInViewUp:t,headerSticky:e,contentSticky:s};v(["load","resize","scroll"],()=>{window.innerWidth<730?m(i):(t.style.removeProperty("top"),e.style.removeProperty("top"),s.style.removeProperty("top"))})},v=(t,e)=>{t.forEach(s=>{window.addEventListener(s,e)})};let o=0,l=0;const m=({headerInViewUp:t,headerSticky:e,contentSticky:s})=>{const i=document.documentElement.scrollTop,n=i-l;l=i,o+=n;const r=t.clientHeight,a=e.clientHeight;o>r&&(o=r),o<0&&(o=0),t.style.top=`${-o}px`,e.style.top=`${r-o-1}px`,s.style.top=`${r+a-1}px`},g={run:u};(t=>{const e=["load","resize"];for(const s of e)window.addEventListener(s,()=>{})})();(t=>{const e=["load","resize"];for(const s of e)window.addEventListener(s,()=>{})})();(t=>{const e=["load","resize"];for(const s of e)window.addEventListener(s,()=>{Array.from(document.querySelectorAll("section")).map(i=>({name:i.getAttribute("id"),top:i.offsetTop})),document.querySelector(".sidebar").clientHeight})})();window.addEventListener("load",()=>{window.scrollTo({top:0,left:0,behavior:"smooth"})});const p=()=>{d.run(),g.run()},f={run:p},h=`<aside class="sidebar">\r
+(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))i(e);new MutationObserver(e=>{for(const n of e)if(n.type==="childList")for(const a of n.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&i(a)}).observe(document,{childList:!0,subtree:!0});function s(e){const n={};return e.integrity&&(n.integrity=e.integrity),e.referrerPolicy&&(n.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?n.credentials="include":e.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function i(e){if(e.ep)return;e.ep=!0;const n=s(e);fetch(e.href,n)}})();const c=()=>{const t=document.querySelector(".button-hamburger");document.querySelector(".menu"),t.addEventListener("click",()=>{t.classList.toggle("open")})},d={run:c},u=()=>{const t=document.querySelector(".sidebar"),r=document.querySelector(".button-sticky"),s={headerInViewUp:t,headerSticky:r};v(["load","resize","scroll"],()=>{window.innerWidth<730?m(s):(t.style.removeProperty("top"),r.style.removeProperty("top"),menuList.style.removeProperty("top"))})},v=(t,r)=>{t.forEach(s=>{window.addEventListener(s,r)})};let o=0,l=0;const m=({headerInViewUp:t,headerSticky:r,contentSticky:s})=>{const i=document.documentElement.scrollTop,e=i-l;l=i,o+=e;const n=t.clientHeight;o>n&&(o=n),o<0&&(o=0),t.style.top=`${-o}px`,r.style.top=`${n-o-1}px`},g={run:u};(t=>{const r=["load","resize"];for(const s of r)window.addEventListener(s,()=>{})})();(t=>{const r=["load","resize"];for(const s of r)window.addEventListener(s,()=>{})})();(t=>{const r=["load","resize"];for(const s of r)window.addEventListener(s,()=>{Array.from(document.querySelectorAll("section")).map(i=>({name:i.getAttribute("id"),top:i.offsetTop})),document.querySelector(".sidebar").clientHeight})})();window.addEventListener("load",()=>{window.scrollTo({top:0,left:0,behavior:"smooth"})});const p=()=>{d.run(),g.run()},f={run:p},h=`<aside class="sidebar">\r
   <div class="wrapper-avatar">\r
     <div class="container-avatar">\r
       <div class="img-avatar"></div>\r
@@ -9,7 +9,7 @@
       </div>\r
     </div>\r
   </div>\r
-  <nav class="menu">\r
+  <!-- <nav class="menu">\r
     <ul class="navigation">\r
       <li class="option"><a name="home">Inicio</a></li>\r
       <li class="option"><a name="about">Sobre mí</a></li>\r
@@ -18,8 +18,8 @@
       <li class="option"><a name="resume">Formación</a></li>\r
       <li class="option"><a name="contact">Contacto </a></li>\r
     </ul>\r
-  </nav>\r
-  <footer class="footer-sidebar">\r
+  </nav> -->\r
+  <footer class="footer-sidebar" style="background: red;">\r
     </div>\r
     <ul class="social-media-list">\r
       <li class="github social-media-item">\r
