@@ -1,31 +1,26 @@
 
-/** 
- * offset (traducción: compensar) - indicates the distance (offset) between the navbar and
- * the position of the scroll with respect to the height of the screen
- **/
-
-let offset = 0;
-let previousScrollY = 0;
-
-// declare vars for make menu sticky
-let navbar = null; 
-let buttonSticky = null;
-let menuList = null;
 
 const run = () => {
 
-    // elements DOM
-    navbar = document.querySelector(".sidebar");
-    buttonSticky = document.querySelector(".button-sticky");
-    menuList = document.querySelector(".menu");
+    // elements DOM - for make menu sticky
+    const navbar = document.querySelector(".sidebar");
+    const buttonSticky = document.querySelector(".button-sticky");
+    const menuList = document.querySelector(".menu");
+
+    const elementsForMenuSticky = {
+        headerInViewUp: navbar,
+        headerSticky: buttonSticky,
+        contentSticky: menuList
+    }
 
     const eventsListener = ["load", "resize", "scroll"];
 
     multiListenWindowEvents(eventsListener, () => {
         //  responsive design mobile 
             if (window.innerWidth < 730) {
-               makeMenuSticky();
-            } else {
+               makeMenuSticky(elementsForMenuSticky);
+            } 
+            else {
                 // remove property top when is full screen
                 navbar.style.removeProperty('top');
                 buttonSticky.style.removeProperty('top');
@@ -40,7 +35,15 @@ const multiListenWindowEvents = (eventsListener, callback) => {
     });
 };
 
-const makeMenuSticky = ()  => {
+/** 
+ * offset (traducción: compensar) - indicates the distance (offset) between the navbar and
+ * the position of the scroll with respect to the height of the screen
+ **/
+
+let offset = 0;
+let previousScrollY = 0;
+
+const makeMenuSticky = ({ headerInViewUp, headerSticky, contentSticky } )  => {
 
     const currentScrollY = document['documentElement' || 'body'].scrollTop;
     const currentPositionScroll = currentScrollY - previousScrollY;
@@ -48,11 +51,12 @@ const makeMenuSticky = ()  => {
     previousScrollY = currentScrollY;
     offset += currentPositionScroll;
 
-    const navbarHeight = navbar.clientHeight;
+    const headerInViewUpHeight = headerInViewUp.clientHeight;
+    const contentStickyHeight = contentSticky.clientHeight;
 
     // 1. the navbar is not visible
-    if (offset > navbarHeight) {
-        offset = navbarHeight;
+    if (offset > headerInViewUpHeight) {
+        offset = headerInViewUpHeight;
     }
 
     // 2. the navbar is visible and I exceed the height of the navbar when slide up scroll
@@ -61,9 +65,9 @@ const makeMenuSticky = ()  => {
     }
 
     // elements DOM to modify
-    navbar.style.top = `${-(offset)}px`;
-    buttonSticky.style.top = `${ (navbarHeight - offset) - 1 }px`;
-    menuList.style.top = `${ (navbarHeight + buttonSticky.clientHeight) - 1 }px`;
+    headerInViewUp.style.top = `${-(offset)}px`;
+    headerSticky.style.top = `${ (headerInViewUpHeight - offset) - 1 }px`;
+    contentSticky.style.top = `${ (headerInViewUpHeight + contentStickyHeight) - 1 }px`;
 }
 
 export default {
