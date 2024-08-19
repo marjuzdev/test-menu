@@ -82,7 +82,7 @@ const getCurrentSection = ( sections, callback ) => {
 const getSectionWithListeners = ( sections, callback) => { 
 
     const events =  ['load', 'scroll','resize'];
-
+    // const events =  ['scroll'];
     // const events =  ['load'];
 
 
@@ -104,22 +104,21 @@ const getSectionWithListeners = ( sections, callback) => {
 
 
         const marginTopMain  = parseInt(window.getComputedStyle(main).marginTop);
-        // console.log(mainMarginTop);
 
         // const currentScrollY = window.scrollY + detectSectionPixels;
         const currentScrollY = window.scrollY;
 
-        // // console.log('main.getBoundingClientRect().top', main.getBoundingClientRect().top * - 1 );
-        // console.log('main.getBoundingClientRect().top', main.getBoundingClientRect().top * - 1 );
-
-
-        sections.forEach((section) => {
+        
+            sections.forEach((section) => {
 
             const marginTopSection = parseInt(window.getComputedStyle(section).marginTop);
+            const heightTotalSection = section.offsetHeight + marginTopSection;
 
-            const boundTopSection = section.offsetTop + marginTopSection;
-            const boundBottomSection = section.offsetTop + section.offsetHeight + marginTopSection;
-            const isIntersecting = currentScrollY > boundTopSection && currentScrollY <= boundBottomSection;
+            const boundTopSection = section.offsetTop;
+            const boundBottomSection = section.offsetTop + heightTotalSection;
+
+            const isIntersecting = currentScrollY >= boundTopSection
+                                && currentScrollY < boundBottomSection;
 
             callback( 
                 isIntersecting ? 
