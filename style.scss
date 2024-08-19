@@ -1,20 +1,20 @@
-@import '@layout/styles/main.scss';
+// @import '@layout/styles/main.scss';
 
-/* fonts */
-@import '@layout/styles/fonts/PlayfairDisplay.scss';
-@import '@layout/styles/fonts/Ranade.scss';
-@import '@layout/styles/fonts/Lora.scss';
-@import '@layout/styles/fonts/SourceSansPro.scss';
-@import '@layout/styles/fonts/Inter.scss';
+// /* fonts */
+// @import '@layout/styles/fonts/PlayfairDisplay.scss';
+// @import '@layout/styles/fonts/Ranade.scss';
+// @import '@layout/styles/fonts/Lora.scss';
+// @import '@layout/styles/fonts/SourceSansPro.scss';
+// @import '@layout/styles/fonts/Inter.scss';
 
-html {
-    font-family: 'Lora', serif;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+// html {
+//     font-family: 'Lora', serif;
+//     -ms-text-size-adjust: 100%;
+//     -webkit-text-size-adjust: 100%;
+//     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+// }
 
-  
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -23,9 +23,59 @@ html {
     list-style: none;
 }
 
+// body {
+//     background: rgb(241 241 241);
+// }
+
 body {
-    background: rgb(241 241 241);
+    font-family: Arial, sans-serif;
 }
 
+nav {
+    position: fixed;
+    top: 40vh;
+    width: 20%;
+    background-color: #333;
+    z-index: 1000; /* Asegura que el menú esté sobre el contenido */
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 10px;
+        overflow: hidden;
+        background-color: #333;
+    
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s ease; /* Suaviza la transición del color */
+        }
+        
+        li.active {
+            background-color: #04AA6D  !important;
+        }
+    }
+}
+
+
+
+
+main {
+    // padding-top: 10vh;
+    margin-top: 10vh;
+}
+
+section {
+    margin-left: 20vw;
+    padding: 60px 0;
+    height: 100vh;
+
+    &#section1 { background-color: lightcoral; }
+    &#section2 { background-color: lightblue; }
+    &#section3 { background-color: lightgreen; }
+}
 
 
