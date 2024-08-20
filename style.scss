@@ -66,19 +66,25 @@ nav {
 main {
     position: relative;
     // padding-top: 10vh;
-    // margin-top: 10vh;
+    margin-top: 10vh;
 }
 
 section {
-    margin-top: 10em;
-
     margin-left: 20vw;
     padding: 60px 0;
     height: 100vh;
 
-    &#section1 { background-color: lightcoral; }
-    &#section2 { background-color: lightblue; }
-    &#section3 { background-color: lightgreen; }
+    &#section1 { 
+        background-color: lightcoral;
+     }
+    &#section2 { 
+        background-color: lightblue;
+        height: 20vh;
+
+     }
+    &#section3 { 
+        background-color: lightgreen;
+     }
 }
 
 

@@ -99,23 +99,28 @@ const getSectionWithListeners = ( sections, callback) => {
          *  Determine percent Height viewport for detect section
          */
 
-        const detectSectionPercentage = 0.5;
-        const detectSectionPixels = (detectSectionPercentage * window.innerHeight);
+        const detectSectionPercentage = 0;
+        // const detectSectionPixels = (detectSectionPercentage * window.innerHeight );
+        // const currentScrollY = window.scrollY + detectSectionPixels; 
+
+        const marginTopMain = parseInt(window.getComputedStyle(main).marginTop);
+        let currentScrollY = window.scrollY - marginTopMain;
+
+        sections.forEach((section, index) => {
 
 
-        const marginTopMain  = parseInt(window.getComputedStyle(main).marginTop);
-
-        // const currentScrollY = window.scrollY + detectSectionPixels;
-        const currentScrollY = window.scrollY;
-
-        
-            sections.forEach((section) => {
 
             const marginTopSection = parseInt(window.getComputedStyle(section).marginTop);
             const heightTotalSection = section.offsetHeight + marginTopSection;
 
-            const boundTopSection = section.offsetTop;
-            const boundBottomSection = section.offsetTop + heightTotalSection;
+       
+            let boundTopSection = section.offsetTop;
+            let boundBottomSection = section.offsetTop + heightTotalSection;
+
+            // first element logic when the parent have margin
+            if ( index === 0) { 
+                boundTopSection = section.offsetTop - marginTopMain;
+            }
 
             const isIntersecting = currentScrollY >= boundTopSection
                                 && currentScrollY < boundBottomSection;
