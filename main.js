@@ -82,17 +82,11 @@ const getCurrentSection = ( sections, callback ) => {
 const getSectionWithListeners = ( sections, callback) => { 
 
     const events =  ['load', 'scroll','resize'];
-    // const events =  ['scroll'];
-    // const events =  ['load'];
-
 
     multiListenWindowEvents(events, (e) => {
 
-        /**
-         * elements dom
-         */
 
-        const main = document.querySelector('main');
+        const elementParent = document.querySelector('main');
         const sections = document.querySelectorAll('section');
 
         /**
@@ -102,29 +96,31 @@ const getSectionWithListeners = ( sections, callback) => {
         const detectSectionPercentage = 0;
         // const detectSectionPixels = (detectSectionPercentage * window.innerHeight );
         // const currentScrollY = window.scrollY + detectSectionPixels; 
+        const stylesElementParent = window.getComputedStyle(elementParent);
 
-        const marginTopMain = parseInt(window.getComputedStyle(main).marginTop);
-        const marginBottomMain = parseInt(window.getComputedStyle(main).marginTop);
+        const marginTopElementParent =  Math.round(parseFloat(stylesElementParent.marginTop));
+        const marginBottomElementParent = Math.round(parseInt(stylesElementParent.marginBottom));
 
-
-        let currentScrollY = window.scrollY - marginTopMain;
 
         sections.forEach((section, index) => {
 
-            const heightTotalSection = section.offsetHeight;
-            let boundTopSection = section.offsetTop;
-            let boundBottomSection = section.offsetTop + heightTotalSection;
+            let boundTopSection =  section.offsetTop;
+            let boundBottomSection =  section.offsetTop + section.offsetHeight;
+
+            let currentScrollY =  window.scrollY - marginTopElementParent;
+
+            // console.log("-------------------------------");
+            // console.log("top", section.getAttribute('id'), boundTopSection + marginTopElementParent);
+            // console.log("bottom", section.getAttribute('id'), boundBottomSection);
 
             // first element logic when the parent have margin top
-            if ( index === 0) { 
-                boundTopSection = section.offsetTop - marginTopMain;
+            if ( index === 0) {
+                boundTopSection = (section.offsetTop) - marginTopElementParent;
             }
 
             // last element logic when the parent have margin bottom
-
             if( sections.length - 1 === index) {
-                // currentScrollY = window.scrollY - marginBottomMain;
-                // boundTopSection = section.offsetTop - marginBottomMain;
+                boundBottomSection = (section.offsetTop + section.offsetHeight) - marginBottomElementParent;
             }
 
             const isIntersecting = currentScrollY >= boundTopSection
@@ -172,6 +168,15 @@ const getDirectionScroll = () => {
 
     return isScrollingDown;
 };
+
+document.querySelector('#active').addEventListener('click', () => {
+
+    const y = 2973  ;
+    window.scrollTo({
+        top: y,
+        behavior: 'smooth'
+    });
+})
 
 
 

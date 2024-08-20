@@ -61,12 +61,15 @@ nav {
 }
 
 
-
+.test {
+    border: solid 1px;
+    background: #04AA6D;
+}
 
 main {
     position: relative;
-    border: 1px solid;
-    margin-top: 10vh;
+    // border: 1px solid;
+    // margin-top: 10vh;
     margin-bottom: 10vh;
 }
 
@@ -74,30 +77,31 @@ section {
     margin-left: 20vw;
     height: auto;
     height: 100vh;
+    // padding-top: 5em;
 
 
     &#section1 {
-        padding-top: 3em;
+        // padding-top: 3em;
         height: 110vh;
 
 
     }
     &#section2 {
-        padding-top: 2em;
+        // padding-top: 2em;
         
     }
     &#section3 {
-        padding-top: 1em;
+        // padding-top: 1em;
     }
 
     &#section1 .wrapper-section { 
-        padding-top: 3em !important;
-        background-color: lightcoral;
+        // padding-top: 3em !important;
+        background: lightcoral;
      }
 
     &#section2 .wrapper-section { 
-        background-color: lightblue;
-        padding-top: 1em !important;
+        background: lightblue;
+        // padding-top: 1em !important;
      }
 
     &#section3 .wrapper-section { 
@@ -106,9 +110,8 @@ section {
 
      .wrapper-section {
         position: relative;
-        padding-top: 1em;
+        // padding-top: 5em;
         height: 100%;
-
      }
 }
 
