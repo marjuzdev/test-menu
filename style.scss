@@ -65,25 +65,50 @@ nav {
 
 main {
     position: relative;
-    // padding-top: 10vh;
+    border: 1px solid;
     margin-top: 10vh;
+    margin-bottom: 10vh;
 }
 
 section {
     margin-left: 20vw;
-    padding: 60px 0;
+    height: auto;
     height: 100vh;
 
-    &#section1 { 
+
+    &#section1 {
+        padding-top: 3em;
+        height: 110vh;
+
+
+    }
+    &#section2 {
+        padding-top: 2em;
+        
+    }
+    &#section3 {
+        padding-top: 1em;
+    }
+
+    &#section1 .wrapper-section { 
+        padding-top: 3em !important;
         background-color: lightcoral;
      }
-    &#section2 { 
-        background-color: lightblue;
-        height: 20vh;
 
+    &#section2 .wrapper-section { 
+        background-color: lightblue;
+        padding-top: 1em !important;
      }
-    &#section3 { 
-        background-color: lightgreen;
+
+    &#section3 .wrapper-section { 
+        background: lightgreen;
+     }
+
+     .wrapper-section {
+        position: relative;
+        padding-top: 1em;
+        height: 100%;
+
      }
 }
 

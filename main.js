@@ -93,7 +93,7 @@ const getSectionWithListeners = ( sections, callback) => {
          */
 
         const main = document.querySelector('main');
-        const sections = main.querySelectorAll('section');
+        const sections = document.querySelectorAll('section');
 
         /**
          *  Determine percent Height viewport for detect section
@@ -104,32 +104,36 @@ const getSectionWithListeners = ( sections, callback) => {
         // const currentScrollY = window.scrollY + detectSectionPixels; 
 
         const marginTopMain = parseInt(window.getComputedStyle(main).marginTop);
+        const marginBottomMain = parseInt(window.getComputedStyle(main).marginTop);
+
+
         let currentScrollY = window.scrollY - marginTopMain;
 
         sections.forEach((section, index) => {
 
-
-
-            const marginTopSection = parseInt(window.getComputedStyle(section).marginTop);
-            const heightTotalSection = section.offsetHeight + marginTopSection;
-
-       
+            const heightTotalSection = section.offsetHeight;
             let boundTopSection = section.offsetTop;
             let boundBottomSection = section.offsetTop + heightTotalSection;
 
-            // first element logic when the parent have margin
+            // first element logic when the parent have margin top
             if ( index === 0) { 
                 boundTopSection = section.offsetTop - marginTopMain;
+            }
+
+            // last element logic when the parent have margin bottom
+
+            if( sections.length - 1 === index) {
+                // currentScrollY = window.scrollY - marginBottomMain;
+                // boundTopSection = section.offsetTop - marginBottomMain;
             }
 
             const isIntersecting = currentScrollY >= boundTopSection
                                 && currentScrollY < boundBottomSection;
 
-            callback( 
-                isIntersecting ? 
-                { active: true, section }:
-                { active: false, section} 
-            );
+            callback({ 
+                    active: isIntersecting,
+                    section
+                });
         });
 
     });
