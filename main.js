@@ -99,28 +99,27 @@ const getSectionWithListeners = ( sections, callback) => {
         const stylesElementParent = window.getComputedStyle(elementParent);
 
         const marginTopElementParent =  Math.round(parseFloat(stylesElementParent.marginTop));
-        const marginBottomElementParent = Math.round(parseInt(stylesElementParent.marginBottom));
+        const marginBottomElementParent = Math.round(parseFloat(stylesElementParent.marginBottom));
 
+        const currentScrollY =  window.scrollY - marginTopElementParent;
 
         sections.forEach((section, index) => {
 
-            let boundTopSection =  section.offsetTop;
-            let boundBottomSection =  section.offsetTop + section.offsetHeight;
+            let topSection = section.offsetTop;
 
-            let currentScrollY =  window.scrollY - marginTopElementParent;
-
-            // console.log("-------------------------------");
-            // console.log("top", section.getAttribute('id'), boundTopSection + marginTopElementParent);
-            // console.log("bottom", section.getAttribute('id'), boundBottomSection);
-
+            let boundTopSection = topSection;
+            let boundBottomSection = topSection + section.offsetHeight;
+           
             // first element logic when the parent have margin top
             if ( index === 0) {
-                boundTopSection = (section.offsetTop) - marginTopElementParent;
+                const firstBoundTopSection =  boundTopSection - marginTopElementParent;
+                boundTopSection = firstBoundTopSection;
             }
 
             // last element logic when the parent have margin bottom
             if( sections.length - 1 === index) {
-                boundBottomSection = (section.offsetTop + section.offsetHeight) - marginBottomElementParent;
+                const lastBoundBottomSection = boundBottomSection + marginBottomElementParent;
+                boundBottomSection = lastBoundBottomSection;
             }
 
             const isIntersecting = currentScrollY >= boundTopSection
@@ -171,7 +170,7 @@ const getDirectionScroll = () => {
 
 document.querySelector('#active').addEventListener('click', () => {
 
-    const y = 2973  ;
+    const y = 3069;
     window.scrollTo({
         top: y,
         behavior: 'smooth'
