@@ -89,19 +89,17 @@ const getSectionWithListeners = ( sections, callback) => {
         const elementParent = document.querySelector('main');
         const sections = document.querySelectorAll('section');
 
-        /**
-         *  Determine percent Height viewport for detect section
-         */
-
-        const detectSectionPercentage = 0;
-        // const detectSectionPixels = (detectSectionPercentage * window.innerHeight );
-        // const currentScrollY = window.scrollY + detectSectionPixels; 
         const stylesElementParent = window.getComputedStyle(elementParent);
-
         const marginTopElementParent =  Math.round(parseFloat(stylesElementParent.marginTop));
         const marginBottomElementParent = Math.round(parseFloat(stylesElementParent.marginBottom));
 
-        const currentScrollY =  window.scrollY - marginTopElementParent;
+        /**
+         *  Determine percent Height viewport for detect section
+         */
+        const detectSectionPercentage = 0;
+
+        const detectSectionPixels = (detectSectionPercentage * window.innerHeight );
+        const currentScrollY =  (window.scrollY + detectSectionPixels) - marginTopElementParent;
 
         sections.forEach((section, index) => {
 
